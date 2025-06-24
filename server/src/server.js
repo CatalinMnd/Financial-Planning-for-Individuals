@@ -1,5 +1,6 @@
 const http = require("http");
 const app = require("./app")
+require("./recurringJob");
 
 const PORT = process.env.PORT || 5000;
 

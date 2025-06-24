@@ -3,6 +3,9 @@
   "version": "1.0.0",
   "description": "Individual Planning for Individuals",
   "main": "server.js",
+  "engines": {
+    "node": "v22.16.0"
+  },
   "scripts": {
     "start": "node src/server.js",
     "watch": "nodemon src/server.js"
@@ -13,11 +16,17 @@
   "author": "Catalin Mandea",
   "license": "MIT",
   "dependencies": {
+    "bcryptjs": "^3.0.2",
+    "cors": "^2.8.5",
+    "dotenv": "^16.5.0",
     "express": "^4.21.2",
+    "express-async-handler": "^1.2.0",
+    "jsonwebtoken": "^9.0.2",
     "mongoose": "^8.13.2",
+    "mongoose-paginate-v2": "^1.9.1",
     "server": "file:"
   },
   "devDependencies": {
-    "nodemon": "^3.1.9"
+    "nodemon": "^3.1.10"
   }
 }
