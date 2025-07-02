@@ -496,4 +496,12 @@ body.dark-mode .dark-toggle.active {
 }
 body.dark-mode .dark-toggle .dark-toggle-icon svg {
   stroke: #ffffff;
+}
+
+body.dark-mode .nav {
+  background: #23272f !important;
+}
+
+body.dark-mode .nav-list li a {
+  color: #e2e8f0;
 } 

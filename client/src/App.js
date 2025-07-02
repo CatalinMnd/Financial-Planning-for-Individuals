@@ -16,6 +16,7 @@ import EditIncome from './pages/EditIncome';
 import EditExpense from './pages/EditExpense';
 import Transactions from './pages/Transactions';
 import Analytics from './pages/Analytics';
+import ForgotPassword from './pages/ForgotPassword';
 import { AuthProvider, useAuthContext } from './contexts/AuthContext';
 import './App.css';
 
@@ -42,6 +43,7 @@ function AppContent() {
           <Route path="/" element={<Home />} />
           <Route path="/login" element={<Login />} />
           <Route path="/register" element={<Register />} />
+          <Route path="/forgot-password" element={<ForgotPassword />} />
           <Route path="/about" element={<About />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/dashboard" element={<Dashboard />} />

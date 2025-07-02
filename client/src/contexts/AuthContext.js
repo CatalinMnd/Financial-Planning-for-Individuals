@@ -16,6 +16,27 @@ export const AuthProvider = ({ children }) => {
   const [isAuthenticated, setIsAuthenticated] = useState(false);
   const [loading, setLoading] = useState(true);
 
+  // --- Dark mode state ---
+  const getInitialDarkMode = () => {
+    const stored = localStorage.getItem('darkMode');
+    if (stored !== null) return stored === 'true';
+    // fallback to system preference
+    return window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+  };
+  const [darkMode, setDarkMode] = useState(getInitialDarkMode);
+
+  useEffect(() => {
+    if (darkMode) {
+      document.body.classList.add('dark-mode');
+    } else {
+      document.body.classList.remove('dark-mode');
+    }
+    localStorage.setItem('darkMode', darkMode);
+  }, [darkMode]);
+
+  const toggleDarkMode = () => setDarkMode((prev) => !prev);
+  // --- End dark mode state ---
+
   useEffect(() => {
     // Check if user is authenticated on app load
     const checkAuth = async () => {
@@ -147,6 +168,8 @@ export const AuthProvider = ({ children }) => {
     logout,
     getAuthHeaders,
     setUser,
+    darkMode,
+    toggleDarkMode,
   };
 
   return (
